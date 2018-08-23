@@ -11,19 +11,18 @@ public class MouseOverHighlighter : MonoBehaviour
 	void Start()
 	{		
 		meshRenderer = GetComponent<MeshRenderer>();
-		originalMaterial = meshRenderer.sharedMaterial;
+		originalMaterial = meshRenderer.material;
 		mouseOverMaterial = new Material(meshRenderer.sharedMaterial);
 		mouseOverMaterial.color = mouseOverColor;
-
 	}
 	
 	void OnMouseOver()
 	{
-		meshRenderer.sharedMaterial = mouseOverMaterial;
+		meshRenderer.material = mouseOverMaterial;
 	}
 	
 	void OnMouseExit()
 	{
-		meshRenderer.sharedMaterial = originalMaterial;
+		meshRenderer.material = originalMaterial;
 	}
 }
